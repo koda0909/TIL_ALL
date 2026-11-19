@@ -42,7 +42,7 @@ SELECT
     s.sport_name AS "종목",
     e.enroll_month AS "수강월",
     COUNT(*) AS "수강인원",
-    SUM(e.pay_amount) AS "매출"
+    ROUND(SUM(e.pay_amount), 0) AS "매출"
 FROM enrollments AS e
 JOIN courses AS c
     ON e.course_id = c.course_id
@@ -54,3 +54,7 @@ GROUP BY
 ORDER BY
     e.enroll_month,
     s.sport_name;
+
+-- 5번
+
+
